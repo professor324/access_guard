@@ -11,7 +11,7 @@ logger = logging.getLogger(_name_)
 class GitHubCollector:
     def _init_(self):
         self.headers = {
-            'Authorization': f'token {settings.GITHUB_TOKEN}',
+            'Authorization': f'token {settings.ACCOUNT_TOKEN}',
             'Accept': 'application/vnd.github.v3+json'
         }
         self.base_url = 'https://api.github.com'
@@ -127,4 +127,5 @@ def main():
     collector.save_actuals(actuals)
 
 if _name_ == "_main_":
+
     main()
