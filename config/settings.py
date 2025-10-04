@@ -5,7 +5,7 @@ load_dotenv()
 
 class Settings:
     # GitHub Configuration
-    GITHUB_TOKEN = os.getenv('GITHUB_TOKEN')
+    ACCOUNT_TOKEN = os.getenv('ACCOUNT_TOKEN')
     GITHUB_ORG = os.getenv('GITHUB_ORG', '')  # Leave empty for personal account
     
     # Cloudflare Configuration
@@ -26,5 +26,6 @@ class Settings:
     @property
     def has_github_org(self):
         return bool(self.GITHUB_ORG and self.GITHUB_ORG.strip())
+
 
 settings = Settings()
